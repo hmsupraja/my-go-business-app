@@ -100,7 +100,7 @@ class Login extends Component {
 
             <input id="password"  type="password" className="inp" value={password} onChange={this.two}  />
           </div>
-        <div class="btn-container">
+        <div className="btn-container">
           <button type="submit" className="but">
             Sign in
           </button>
