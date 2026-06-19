@@ -7,7 +7,7 @@ class Login extends Component{
     state={
         email:'',
         password:'',
-        se:false;
+        se:false,
         em:"",
     }
     one=event=>{
@@ -74,14 +74,14 @@ class Login extends Component{
                     <h1 className="header">Go Bussiness</h1>
                     <p className="login-para">sign in to open your referral dashboard</p>
                     <div className="input-cont">
-                        <label htmlFor="user" className="email-inp">Email</label>
+                        <label htmlFor="user" className="label">Email</label>
                         <input id="user" placeholder="you@example.com" className="inpu" type="email" value={value} onChange={this.one} />
 
                     </div>
 
                     <div className="input-cont">
                         <label htmlFor="password" className="label">Password</label>
-                        <input placeholder="Enter Password" id='password' className="inpi" type="password" value={password} onChange={this.two}/>      
+                        <input placeholder="Enter Password" id='password' className="inpu" type="password" value={password} onChange={this.two}/>      
                 
                          </div>
 
