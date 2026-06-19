@@ -1,99 +1,129 @@
-import { Component } from "react";
+import {Component} from 'react'
 import Cookies from 'js-cookie'
 import {Navigate} from 'react-router-dom'
+
 import './index.css'
 
-class Login extends Component{
-    state={
-        email:'',
-        password:'',
-        se:false,
-        em:"",
-    }
-    one=event=>{
-        this.setState({
-            email:event.target.value,
-        })
-    }
+class Login extends Component {
+  state = {
+    email: '',
+    password: '',
+    showError: false,
+    errorMsg: '',
+  }
 
-    two=event=>{
-        this.setState({
-            password:event.target.value,
-        })
-    }
-    success=jwtToken=>{
-        Cookies.set('jwt_token',jwtToken,{expires:30,path:'/',})
-    
-    window.location.replace('/')}
+  one = event => {
+    this.setState({email: event.target.value})
+  }
 
-    fail=em=>{
-        this.setState({
-            se:true,em,
-        })
-    }
+  two = event => {
+    this.setState({password: event.target.value})
+  }
 
-    BussinessLogin=async event=>{
-        event.preventDefault()
-        const {email,password}=this.state
-        const userDetails={
-            email,password
-        }
+  sucess = jwtToken => {
+    Cookies.set('jwt_token', jwtToken)
 
-        const url="https://v9fes04dwf.execute-api.eu-north-1.amazonaws.com/api/auth/signin"
-        const options={
-           method:"POST",
-           headers:{
-            'Content-Type':'application/json',
+    window.location.href = '/'
+  }
 
-           },
-           body:JSON.stringify(userDetails),
-        }
+  fail = errorMsg => {
+    this.setState({
+      showError: true,
+      errorMsg,
+    })
+  }
 
-        const response=await fetch(url,options)
-        const data=await response.json()
+  BusinessLogin= async event => {
+    event.preventDefault()
 
-        if (response.ok){
-            this.success(data.data.token)
+    const {email, password} = this.state
 
-        }else{
-            this.fail(data.message)
-        }
+    const userDetails = {
+      email,
+      password,
     }
 
-    render(){
-        const {email,password,se,em}=this.state
+    const url =
+      'https://v9fes04dwf.execute-api.eu-north-1.amazonaws.com/api/auth/signin'
 
-        const token=Cookies.get('jwt_token')
-        if(token!=undefined){
-            return <Navigate to='/'/>
-        }
-
-        return(
-            <div className="main-cont">
-                <form className="form-element" onSubmit={this.BussinessLogin}>
-                    <h1 className="header">Go Bussiness</h1>
-                    <p className="login-para">sign in to open your referral dashboard</p>
-                    <div className="input-cont">
-                        <label htmlFor="user" className="label">Email</label>
-                        <input id="user" placeholder="you@example.com" className="inpu" type="email" value={value} onChange={this.one} />
-
-                    </div>
-
-                    <div className="input-cont">
-                        <label htmlFor="password" className="label">Password</label>
-                        <input placeholder="Enter Password" id='password' className="inpu" type="password" value={password} onChange={this.two}/>      
-                
-                         </div>
-
-                         <button className="butn" type="submit">
-                            Login
-                         </button>
-
-                         <div className="error-msg">{ se && <p className="error-para">{em}</p>}
-                    </div>
-                </form>
-            </div>
-        )
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(userDetails),
     }
 
+    try {
+      const response = await fetch(url, options)
+      const data = await response.json()
+
+      if (response.ok) {
+        this.sucess(data.data.token)
+      } else {
+        this.fail(data.message)
+      }
+    } catch (error) {
+      this.fail('Something went wrong. Please try again.')
+    }
+  }
+
+  render() {
+    const {email, password, showError, errorMsg} = this.state
+
+    const token = Cookies.get('jwt_token')
+
+    if (token) {
+      return <Navigate to="/" replace />
+    }
+
+    return (
+      <div className="main-con">
+        <form className="form-el" onSubmit={this.BusinessLogin}>
+          <h1 className="header">Go Business</h1>
+
+          <p className="login-para">
+            Sign in to open your referral dashboard.
+          </p>
+
+          <div className="inp-con">
+            <label htmlFor="email" className="lab">
+              Email
+            </label>
+
+            <input
+              id="email"
+              type="email"
+              className="inp"
+              placeholder="you@example.com"
+              value={email}
+              onChange={this.one}
+            />
+          </div>
+
+          <div className="inp-con">
+            <label htmlFor="password" className="lab">
+              Password
+            </label>
+
+            <input
+              id="password"
+              type="password"
+              className="inp"
+              value={password}
+              onChange={this.two}
+            />
+          </div>
+
+          <button type="submit" className="but">
+            Sign in
+          </button>
+
+          {showError && <p className="ep">*{errorMsg}</p>}
+        </form>
+      </div>
+    )
+  }
 }
+
+export default Login

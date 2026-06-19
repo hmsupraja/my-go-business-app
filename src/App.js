@@ -1,15 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
-import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
 import Login from './components/Login'
+import Dashboard from './components/Dashboard'
+import ReferralDetail from './components/ReferralDetail'
 import NotFound from './components/NotFound'
-const App=()=>{
+import ProtectedRoute from './components/ProtectedRoute'
+
+const App = () => (
   <BrowserRouter>
-  <Routes>
-    <Route path="/login" element={<Login/>}/>
-    <Route path="*" element={<NotFound/>}/>
-    
-    </Routes></BrowserRouter>
-}
+    <Routes>
+      <Route path="/login" element={<Login />} />
+
+      <Route
+        path="/"
+        element={
+          <ProtectedRoute>
+            <Dashboard />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/referral"
+        element={
+          <ProtectedRoute>
+            <ReferralDetail />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  </BrowserRouter>
+)
+
 export default App

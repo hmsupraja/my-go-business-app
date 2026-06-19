@@ -1,106 +1,40 @@
-.main-cont{
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color:#dee4f0;
-
-
-}
-.input-cont{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 10px;
-}
-
-.form-element{
-    display:flex;
-    flex-direction: column;
-    background-color: #ffffff;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 10px;
-    height: 400px;
-    width: 300px;
-    border-radius:10px ;
-}
-.header{
-    font-size: 32px;
-    margin-top: 10px;
-    color: #164365;
-}
-.login-para{
-    color: #9fb3c3;
-    font-family: 'Roboto';
-    line-height: 1.5;
-    font-size: 15px;
-    margin-top: 25px;
-    text-align: center;
-}
-.inpu{
-width: 100%;
-padding: 10px;
-border: 1px solid #c3cad9;
-color: #000000;
-outline: none;
-font-size: 15px;
-border-radius: 5px;
-}
-
-.inpu:focus{
-    border-color: #1565d8;
-
-}
-.label{
-    color:#5a7184;
-font-size: 15px;
-font-weight: 500;
-margin-bottom: 5px;
-font-family: 'Roboto';
- }
-
- .butn{
-    width: 100%;
-    color: #ffffff;
-    border: none;
-    outline: none;
-    background-color: #1565d8;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 500;
-    padding: 12px;
-    margin-top: 20px;
-
- }
- .butn:hover{
-    background-color: #0f56bf;
- }
- .ct{
-    display: flex;
-    width: 100%;
-    margin-top: 10px;
-    justify-content: center;
-
- }
- .error-para{
-    color: #ff0b37;
-    font-size:15px;
-    text-align: center;
-    font-family: 'Roboto';
- }
- .error-msg{
-    display: flex;
+.main-con {
+  min-height: 100vh;
+  display: flex;
   justify-content: center;
-  width: 100%;
-  margin-top: 10px;
- }
+  align-items: center;
+  background-color: #dee4f0;
+}
 
- @media  screen and (max-width:576px) {
-    .form-element{
-        width:90%;
-        padding:20px;
-    }
- }
+.inp-con {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.lab {
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.inp {
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  outline: none;
+}
+
+.but {
+  margin-top: 10px;
+  height: 40px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.ep {
+  color: red;
+  margin-top: 10px;
+  font-size: 14px;
+}
