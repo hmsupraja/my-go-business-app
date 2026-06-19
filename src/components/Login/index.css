@@ -1,8 +1,8 @@
 .main-con {
-  min-height: 100vh;
-  display: flex;
+ display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
   background-color: #dee4f0;
 }
 
@@ -19,6 +19,7 @@
 }
 
 .inp {
+    width: 100%;
   padding: 10px;
   border: 1px solid #cbd5e1;
   border-radius: 6px;
@@ -26,15 +27,60 @@
 }
 
 .but {
-  margin-top: 10px;
-  height: 40px;
+  width:200%;
+  margin-top: 20px;
+  background-color: #1565d8;
+  color: #ffffff;
   border: none;
+  outline: none;
+  padding: 12px;
   border-radius: 6px;
   cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  align-items:center;
+  justify-content: center;
+  
+
 }
 
 .ep {
   color: red;
   margin-top: 10px;
   font-size: 14px;
+}
+.form-el{
+display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: #ffffff;
+  width: 300px;
+  min-height: 300px;
+  padding: 30px;
+  border-radius: 12px;
+  
+}
+.header {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #4f46e5;
+}
+.btn-container{
+
+    .btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+
+}
+.login-para {
+  color: #5a7184;
+  font-size: 15px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
+  margin-bottom: 24px;
+  text-align: left;
 }

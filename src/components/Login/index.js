@@ -87,37 +87,24 @@ class Login extends Component {
           </p>
 
           <div className="inp-con">
-            <label htmlFor="email" className="lab">
-              Email
+            <label htmlFor="email" className="lab"> Email
             </label>
 
             <input
-              id="email"
-              type="email"
-              className="inp"
-              placeholder="you@example.com"
-              value={email}
-              onChange={this.one}
+              id="email" type="email" className="inp" placeholder="you@example.com" value={email}  onChange={this.one}
             />
           </div>
 
           <div className="inp-con">
-            <label htmlFor="password" className="lab">
-              Password
-            </label>
+            <label htmlFor="password" className="lab"> Password </label>
 
-            <input
-              id="password"
-              type="password"
-              className="inp"
-              value={password}
-              onChange={this.two}
-            />
+            <input id="password"  type="password" className="inp" value={password} onChange={this.two}  />
           </div>
-
+        <div class="btn-container">
           <button type="submit" className="but">
             Sign in
           </button>
+          </div>
 
           {showError && <p className="ep">*{errorMsg}</p>}
         </form>
