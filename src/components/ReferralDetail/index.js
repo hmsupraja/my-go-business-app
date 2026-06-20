@@ -1,13 +1,13 @@
 import {useEffect, useState} from 'react'
 import {Link, useParams, useNavigate} from 'react-router-dom'
 import Cookies from 'js-cookie'
-import NotFound from './NotFound'
+import NotFound from '../NotFound'
 import './index.css'
 
 const ReferralDetail = () => {
   const {id} = useParams()
   const navigate = useNavigate()
-
+const [notFound, setNotFound] = useState(false)
   const [referral, setReferral] = useState(null)
   const [loading, setLoading] = useState(true)
  
