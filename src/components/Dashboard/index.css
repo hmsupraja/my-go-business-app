@@ -39,11 +39,13 @@
 
 .logout-btn {
   border: none;
-  background-color: #2563eb;
+  background-color: #e90e2f;
   color: white;
   padding: 10px 18px;
   border-radius: 6px;
   cursor: pointer;
+  font-weight: 500;
+  
 }
 
 .cont-2 {

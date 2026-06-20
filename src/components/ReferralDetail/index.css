@@ -35,9 +35,9 @@
 }
 
 .logout-btn {
-  background-color: transparent;
+  background-color:#f10606;
   border: 1px solid #ef4444;
-  color: #ef4444;
+  color: #f8f3f3;
   padding: 8px 18px;
   border-radius: 8px;
   cursor: pointer;
