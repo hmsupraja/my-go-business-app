@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react'
 import {Link, useParams, useNavigate} from 'react-router-dom'
 import Cookies from 'js-cookie'
-
+import NotFound from './NotFound'
 import './index.css'
 
 const ReferralDetail = () => {
@@ -10,7 +10,7 @@ const ReferralDetail = () => {
 
   const [referral, setReferral] = useState(null)
   const [loading, setLoading] = useState(true)
-  const [notFound, setNotFound] = useState(false)
+ 
 
   const referral_logout = () => {
     Cookies.remove('jwt_token')
@@ -80,14 +80,13 @@ const ReferralDetail = () => {
       currency: 'USD',
       maximumFractionDigits: 0,
     }).format(value)
+if (loading) {
+  return <h1>Loading...</h1>
+}
 
-  if (loading) {
-    return <h1>Loading...</h1>
-  }
-
-  if (notFound) {
-    return <h1>Referral not found</h1>
-  }
+if (notFound || !referral) {
+  return <NotFound />
+}
 /* Getting the Referral Details */
   return (
     <>
