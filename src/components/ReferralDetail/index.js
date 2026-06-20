@@ -88,7 +88,7 @@ const ReferralDetail = () => {
   if (notFound) {
     return <h1>Referral not found</h1>
   }
-
+/* Getting the Referral Details */
   return (
     <>
       <nav className="navbar">

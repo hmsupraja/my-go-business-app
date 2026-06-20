@@ -136,7 +136,7 @@ class Dashboard extends Component {
       ))}
     </div>
   )
-
+/* Dashboard rendering*/
   render() {
     const {dashboardData, loading, er, curr_page} = this.state
 

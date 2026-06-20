@@ -7,7 +7,7 @@
   justify-content: center;
 }
 
-/* Navbar */
+
 .navbar {
   background-color: #ffffff;
   padding: 18px 40px;
@@ -53,7 +53,7 @@
   display: inline-block;
 }
 
-/* Heading */
+
 .referral-detail-container h1 {
   color: #1e293b;
   margin-bottom: 8px;
@@ -65,7 +65,7 @@
   margin-bottom: 30px;
 }
 
-/* Card */
+
 .referral-card {
   background-color: #ffffff;
   width: 450px;
@@ -75,7 +75,7 @@
   margin-bottom:30px;
 }
 
-/* Card Header */
+
 .card-header {
   display: flex;
   justify-content: space-between;
@@ -98,7 +98,7 @@
   font-weight: 500;
 }
 
-/* Rows */
+
 .card-row {
   display: flex;
   justify-content: space-between;
@@ -125,7 +125,7 @@
 
 }
 
-/* Responsive */
+
 @media screen and (max-width: 576px) {
   .referral-detail-container {
     padding: 20px;

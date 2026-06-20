@@ -67,7 +67,7 @@ class Login extends Component {
       this.fail('Something went wrong. Please try again.')
     }
   }
-
+/* UI of Login Form */
   render() {
     const {email, password, showError, errorMsg} = this.state
 
