@@ -12,7 +12,7 @@ const ReferralDetail = () => {
   const [loading, setLoading] = useState(true)
   const [notFound, setNotFound] = useState(false)
 
-  const onClickLogout = () => {
+  const referral_logout = () => {
     Cookies.remove('jwt_token')
     navigate('/login')
   }
@@ -103,7 +103,7 @@ const ReferralDetail = () => {
           <button
             type="button"
             className="logout-btn"
-            onClick={onClickLogout}
+            onClick={referral_logout}
           >
             Log Out
           </button>
