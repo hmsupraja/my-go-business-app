@@ -1,0 +1,147 @@
+/* Page */
+.referral-detail-container {
+  background-color: #f5f7ff;
+  min-height: 100vh;
+  padding: 40px;
+  font-family: 'Roboto', sans-serif;
+  justify-content: center;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #ffffff;
+  padding: 18px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: #4f46e5;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.link-home {
+  text-decoration: none;
+  color: #4f46e5;
+  font-size: 16px;
+}
+
+.logout-btn {
+  background-color: transparent;
+  border: 1px solid #ef4444;
+  color: #ef4444;
+  padding: 8px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* Back link */
+.back-link {
+  text-decoration: none;
+  color: #6366f1;
+  font-size: 14px;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+/* Heading */
+.referral-detail-container h1 {
+  color: #1e293b;
+  margin-bottom: 8px;
+  justify-content: center;
+}
+
+.referral-detail-container > p {
+  color: #64748b;
+  margin-bottom: 30px;
+}
+
+/* Card */
+.referral-card {
+  background-color: #ffffff;
+  width: 450px;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  margin-bottom:30px;
+}
+
+/* Card Header */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+}
+
+.card-header h2 {
+  color: #1e293b;
+  font-size: 28px;
+  margin: 0;
+}
+
+.card-header span {
+  background-color: #eef2ff;
+  color: #6366f1;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Rows */
+.card-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 25px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.card-row p:first-child {
+  color: #94a3b8;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.card-row p:last-child {
+  color: #1e293b;
+  font-size: 15px;
+  font-weight: 600;
+}
+.back{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+}
+
+/* Responsive */
+@media screen and (max-width: 576px) {
+  .referral-detail-container {
+    padding: 20px;
+  }
+
+  .referral-card {
+    width: 100%;
+    margin-bottom:30px;
+  }
+
+  .navbar {
+    padding: 16px 20px;
+  }
+
+  .card-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

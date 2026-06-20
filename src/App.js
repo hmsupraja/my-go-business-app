@@ -21,7 +21,7 @@ const App = () => (
       />
 
       <Route
-        path="/referral"
+        path="/referral/:id"
         element={
           <ProtectedRoute>
             <ReferralDetail />
